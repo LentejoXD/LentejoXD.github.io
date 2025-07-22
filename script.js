@@ -1,15 +1,37 @@
-// Carrusel
+// --- Carrusel con soporte de swipe ---
 let scrollIndex = 0;
+const carrusel = document.getElementById('carrusel-imagenes');
+let startX = 0;
+let isDragging = false;
+
 function moverCarrusel(direccion) {
-    const carrusel = document.getElementById('carrusel-imagenes');
     const items = carrusel.children.length;
     scrollIndex += direccion;
-    if (scrollIndex < 0) scrollIndex = items - 3;
-    if (scrollIndex > items - 3) scrollIndex = 0;
-    carrusel.style.transform = `translateX(-${scrollIndex * (100 / 3)}%)`;
+    if (scrollIndex < 0) scrollIndex = items - 1;
+    if (scrollIndex > items - 1) scrollIndex = 0;
+    carrusel.style.transform = `translateX(-${scrollIndex * 100}%)`;
 }
 
-// Recuerdos
+// Eventos de swipe táctil
+carrusel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+});
+carrusel.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    let currentX = e.touches[0].clientX;
+    let diff = startX - currentX;
+    if (diff > 50) {
+        moverCarrusel(1);
+        isDragging = false;
+    } else if (diff < -50) {
+        moverCarrusel(-1);
+        isDragging = false;
+    }
+});
+carrusel.addEventListener('touchend', () => { isDragging = false; });
+
+// --- Recuerdos ---
 function mostrarRecuerdo(texto, imagen) {
     document.getElementById('recuerdo-texto').textContent = texto;
     const img = document.getElementById('recuerdo-imagen');
@@ -17,7 +39,7 @@ function mostrarRecuerdo(texto, imagen) {
     img.style.display = "inline-block";
 }
 
-// Fechas y confeti
+// --- Fechas y confeti ---
 function formatearFecha(fechaISO) {
     if (!fechaISO) return "";
     const partes = fechaISO.split("-");
