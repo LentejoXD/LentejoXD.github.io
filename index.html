@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Amor: C&M</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="fondo-texto"></div>
+
+    <header>
+        <div class="foto-izquierda">
+            <img src="/imagenes/Rostro1.jpg" alt="Tu Rostro">
+        </div>
+        <h1>Nuestra Historia de Amor</h1>
+        <div class="foto-derecha">
+            <img src="/imagenes/Rostro2.jpg" alt="Mi Rostro">
+        </div>
+    </header>
+
+    <section id="introduccion">
+        <h2>Nuestra Historia</h2>
+        <p>Todo comenzo un 7 de enero de 2025, cuando decidí contestarte una historia que habías subido a cf, estaba super nervioso porque la historia era simplemente una excusa para empezar a escribirte, en esos momentos estaba con mis mejores amigos, aconsejandome de que decirte, me contestaste lo que te puse y ahí nació la historia, seguimos hablando por un par de días hasta que decidimos vernos en persona, ese dpia lo admito, enamoré hasta de como respiraba, algo que en realidadd nunca me había pasado pero con vos salía tan natural, tan lindo, sin forzar absolutamente nada dejando que fluyeran las cosas, y desde ese día en particular me di cuenta que pronto ibas a ser alguien muy especial en mi vida... y sí fue así, hay tantas cosas que siento por vos, tantas cosas que hemos vivido y aunque tal vez no seamos nuestras primera vez en todo, pero en lo que si estoy seguro es que es nuestra primera vez en una relacion sana y saludable por el esfuerzo que hay en los dos, y esta pequeña pagina es solo una pequeña parte de lo que puedo hacer por vos.
+            actualmente tienes todo mi amor, respeto y lealtad, por lo que está historia se va a seguir contando.
+            Gracias Mai, espero este detalle te guste</p>
+    </section>
+
+    <!-- Momentos -->
+    <section id="momentos">
+        <h2>Momentos Inolvidables</h2>
+        <div class="carrusel">
+            <button class="carrusel-btn izq" onclick="moverCarrusel(-1)">&#10094;</button>
+            <div class="carrusel-imagenes" id="carrusel-imagenes">
+                <div class="item"><img src="/imagenes/imagen1.jpg" alt="Momento 1"><h2>Mi cumpleaños que me hiciste tan feliz</h2></div>
+                <div class="item"><img src="/imagenes/Imagen2.jpg" alt="Momento 2"><h2>Cuando nos hicimos novios</h2></div>
+                <div class="item"><img src="/imagenes/Imagen44.jpg" alt="Momento 3"><h2>Viaje a la playa</h2></div>
+                <div class="item"><img src="/imagenes/Imagen4.jpg" alt="Momento 4"><h2>Andando en Kayak</h2></div>
+                <div class="item"><img src="/imagenes/Imagen5.jpg" alt="Momento 5"><h2>Primer atardecer juntos</h2></div>
+                <div class="item"><img src="/imagenes/Imagen6.jpg" alt="Momento 6"><h2>Primeras Flores que te di</h2></div>
+            </div>
+            <button class="carrusel-btn der" onclick="moverCarrusel(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Recuerdos -->
+    <section id="recuerdos">
+        <h2>Recuerdos Bonitos</h2>
+        <div class="recuerdos-lista">
+            <button class="recuerdo" onclick="mostrarRecuerdo('Cuando te cociné por primera vez ', 'recuerdo7.jpg')">Recuerdo 1</button>
+            <button class="recuerdo" onclick="mostrarRecuerdo('Cuando me mordiste y parecía una serpiente', 'recuerdo2.jpg')">Recuerdo 2</button>
+            <button class="recuerdo" onclick="mostrarRecuerdo('Cuando fuimos al río juntoss', 'recuerdo3.jpg')">Recuerdo 3</button>
+            <button class="recuerdo" onclick="mostrarRecuerdo('Cuando fuimos a la piscina', 'recuerdo6.jpg')">Recuerdo 4</button>
+            <button class="recuerdo" onclick="mostrarRecuerdo('La primera vez que fuí a tu casa (muriendo de nervios)', 'recuerdo5.jpg')">Recuerdo 5</button>
+        </div>
+        <div class="recuerdo-contenido">
+            <img id="recuerdo-imagen" class="recuerdo-img" src="" alt="">
+            <p id="recuerdo-texto" class="recuerdo-texto">Haz clic en un recuerdo para verlo aquí...</p>
+        </div>
+    </section>
+
+    <!-- Fechas -->
+    <section id="fechas">
+        <h2>¿Recuerdas estas fechas?</h2>
+        <div class="fecha-pregunta">
+            <p>Cuándo fue la primera vez que salimos juntos?</p>
+            <input type="date" id="fechaInput1">
+            <button onclick="validarFecha('fechaInput1','17/01/2025','mensajeFecha1')">Comprobar</button>
+            <p id="mensajeFecha1"></p>
+        </div>
+        <div class="fecha-pregunta">
+            <p>Cuándo fue nuestro primer viaje?</p>
+            <input type="date" id="fechaInput2">
+            <button onclick="validarFecha('fechaInput2','15/04/2025','mensajeFecha2')">Comprobar</button>
+            <p id="mensajeFecha2"></p>
+        </div>
+        <div class="fecha-pregunta">
+            <p>Cuándo nos hicimos novios?</p>
+            <input type="date" id="fechaInput3">
+            <button onclick="validarFecha('fechaInput3','11/05/2025','mensajeFecha3')">Comprobar</button>
+            <p id="mensajeFecha3"></p>
+        </div>
+    </section>
+
+    <!-- Minijuego -->
+    <section id="minijuego">
+        <h2>Juega Gato contra la Máquina</h2>
+        <div class="game-container">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <p id="game-status">Tu turno (X)</p>
+        <button onclick="reiniciarJuego()">Reiniciar</button>
+    </section>
+
+    <!-- Futuro -->
+    <section id="futuro">
+        <h2>Nuestro Futuro Juntos</h2>
+        <p>Está claro que lo que hemos vivido no es ni la mitad de lo que quiero vivir contigo, y que esta historia está aun comenzando, porque sí, ahora en todos mis planes estás vos, en todos mis sueños estás vos, en todo lo que anhelo estás vos, tal vez pq vos seas todo lo que quiero, todo lo que anhelo y todo lo que necesito, o tal vez pq simplemente te amo con mi corazón, no lo sé, el hecho es que en mi futuro estás tú a mi lado apoyandome, es lo que me motiva...
+            2025 - ∞</p>
+    </section>
+
+    <section id="video">
+    <h2>Nuestro Video Especial</h2>
+    <div class="video-fondo">
+        <div class="hearts"></div>
+        <div class="video-container">
+            <video controls>
+                <source src="video.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+            </video>
+        </div>
+    </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 [Chris] & [Mai]</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
